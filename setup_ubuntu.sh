@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # setup global nodejs
+DIR=$PWD
+cd $HOME
 curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 
 # setup yarn
@@ -11,42 +13,23 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
+# vim
+sudo add-apt-repository ppa:pi-rho/dev -y
+
+# golang
+sudo add-apt-repository ppa:longsleep/golang-backports -y
+
 # update apt packages
 sudo apt-get update
 sudo apt-get upgrade -y
 
 # install ruby pre-requisites
-sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs python-dev cmake sublime-text yarn
+sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs python-dev cmake sublime-text yarn vim golang-go
 
 # update global npm and install typescript and tern
 sudo npm install -g npm typescript tern
+cd $DIR
 
-# install nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-. ~/.bashrc
-nvm install 6.11.0
-nvm alias default 6.11.0
-
-# install rbenv
-cd
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-. ~/.bashrc
-
-# install ruby-build for rbenv
-git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
-. ~/.bashrc
-
-# install ruby 2.4.1
-rbenv install 2.4.1
-rbenv global 2.4.1
-ruby -v
-
-# update gems
-gem update --system
-gem update
-gem install rails
-rbenv rehash
-
+./setup_base16_bashrc.sh
+./setup_nvm.sh
+./setup_ruby.sh
