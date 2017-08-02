@@ -30,6 +30,5 @@ sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libr
 sudo npm install -g npm typescript tern
 cd $DIR
 
-./setup_base16_bashrc.sh
 ./setup_nvm.sh
 ./setup_ruby.sh
