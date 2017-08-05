@@ -10,3 +10,4 @@ nvm install 8.2.1
 nvm alias default 8.2.1
 
 npm install -g npm tern typescript
+source ~/.bashrc

@@ -31,7 +31,7 @@ sudo apt-get dist-upgrade -y
 sudo apt-get upgrade -y
 
 # install ruby pre-requisites
-sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs python-dev cmake sublime-text yarn vim golang-go python-pip python3.6
+sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs python-dev cmake sublime-text yarn vim golang-go python-pip python3.6 ack-grep
 
 # update global npm and install typescript and tern
 sudo npm install -g npm typescript tern
