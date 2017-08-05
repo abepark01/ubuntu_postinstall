@@ -1,11 +1,12 @@
 #!/bin/bash
 
 sudo apt-get update -qq
-sudo apt-get install software-properties-common python-software-properties -y
+sudo apt-get install software-properties-common -y
 # setup global nodejs
 DIR=$PWD
 cd $HOME
 curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
 
 # setup yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
