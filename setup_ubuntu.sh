@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get update -qq
+sudo apt-get install software-properties-common python-software-properties -y
 # setup global nodejs
 DIR=$PWD
 cd $HOME
