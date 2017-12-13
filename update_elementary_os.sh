@@ -1,32 +1,32 @@
-sudo apt update -qq
-sudo apt install gdebi dconf-editor -y
-sudo apt install software-properties-common -y
+apt update -qq
+apt install gdebi dconf-editor -y
+apt install software-properties-common -y
 
-sudo add-apt-repository ppa:philip.scott/elementary-tweaks -y
-sudo apt update -qq
-sudo apt install elementary-tweaks -y
+add-apt-repository ppa:philip.scott/elementary-tweaks -y
+apt update -qq
+apt install elementary-tweaks -y
 
-sudo add-apt-repository ppa:linrunner/tlp -y
-sudo apt update -qq
-sudo apt install tlp tlp-rdw -y
-sudo tlp start
-sudo apt install redshift -y
-sudo chmod 744 /usr/lib/gvfs/gvfsd-smb-browse
-sudo apt install chromium-browser -y
-sudo apt install ubuntu-restricted-extras libavcodec-extra ffmpeg -y
+add-apt-repository ppa:linrunner/tlp -y
+apt update -qq
+apt install tlp tlp-rdw -y
+tlp start
+apt install redshift -y
+chmod 744 /usr/lib/gvfs/gvfsd-smb-browse
+apt install chromium-browser -y
+apt install ubuntu-restricted-extras libavcodec-extra ffmpeg -y
 
-sudo apt install libavcodec-extra -y
-sudo apt install libdvd-pkg -y
-sudo apt install preload -y
+apt install libavcodec-extra -y
+apt install libdvd-pkg -y
+apt install preload -y
 gsettings set org.pantheon.files.preferences single-click false
 
-sudo apt purge scratch-text-editor epiphany-browser epiphany-browser-data -y
-sudo apt purge midori-granite -y
-sudo apt purge noise -y
-sudo apt purge software-center -y
-sudo apt purge bluez -y
-sudo apt purge modemmanager -y
-sudo apt purge geary -y
-sudo apt autoremove -y
-sudo apt autoclean -y
+apt purge scratch-text-editor epiphany-browser epiphany-browser-data -y
+apt purge midori-granite -y
+apt purge noise -y
+apt purge software-center -y
+apt purge bluez -y
+apt purge modemmanager -y
+apt purge geary -y
+apt autoremove -y
+apt autoclean -y
 
