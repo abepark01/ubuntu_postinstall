@@ -1,38 +1,38 @@
 #!/bin/bash
 
-sudo apt-get update -qq
-sudo apt-get install software-properties-common -y
+apt-get update -qq
+apt-get install software-properties-common -y
 # setup global nodejs
 DIR=$PWD
 cd $HOME
 curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
+bash nodesource_setup.sh
 
 # setup yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 # python 3.6
-sudo add-apt-repository ppa:jonathonf/python-3.6 -y
+add-apt-repository ppa:jonathonf/python-3.6 -y
 
 # vim
-sudo add-apt-repository ppa:pi-rho/dev -y
+add-apt-repository ppa:pi-rho/dev -y
 
 # golang
-sudo add-apt-repository ppa:longsleep/golang-backports -y
+add-apt-repository ppa:longsleep/golang-backports -y
 
 # update apt packages
-sudo apt-get update -qq
+apt-get update -qq
 
 # install ruby pre-requisites
-sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs python-dev cmake yarn vim python-pip python3.6 ack-grep
+apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs python-dev cmake yarn vim python-pip python3.6 ack-grep
 
-sudo apt-get dist-upgrade -y
-sudo apt-get upgrade -y
+apt-get dist-upgrade -y
+apt-get upgrade -y
 
 # update global npm and install typescript and tern
-sudo npm install -g npm typescript tern prettier create-react-app
+npm install -g npm typescript tern prettier create-react-app
 cd $DIR
 
-sudo apt-get autoclean
-sudo apt-get autoremove -y
+apt-get autoclean
+apt-get autoremove -y
