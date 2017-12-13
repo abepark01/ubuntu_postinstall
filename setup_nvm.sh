@@ -10,6 +10,6 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install $NODE_VERSION
 nvm alias default $NODE_VERSION
-
+nvm use $NODE_VERSION
 npm install -g npm tern typescript prettier gulp create-react-app
 source ~/.bashrc
