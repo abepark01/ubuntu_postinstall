@@ -5,8 +5,7 @@ apt-get install software-properties-common -y
 # setup global nodejs
 DIR=$PWD
 cd $HOME
-curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
-. nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh | bash -
 
 # setup yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
