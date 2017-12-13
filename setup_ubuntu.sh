@@ -23,11 +23,12 @@ sudo add-apt-repository ppa:longsleep/golang-backports -y
 
 # update apt packages
 sudo apt-get update -qq
-sudo apt-get dist-upgrade -y
-sudo apt-get upgrade -y
 
 # install ruby pre-requisites
 sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs python-dev cmake yarn vim python-pip python3.6 ack-grep
+
+sudo apt-get dist-upgrade -y
+sudo apt-get upgrade -y
 
 # update global npm and install typescript and tern
 sudo npm install -g npm typescript tern prettier create-react-app
