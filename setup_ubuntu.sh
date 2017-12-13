@@ -2,6 +2,7 @@
 
 apt-get update -qq
 apt-get install software-properties-common -y
+
 # setup global nodejs
 DIR=$PWD
 cd $HOME
@@ -29,10 +30,15 @@ apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadli
 
 apt-get dist-upgrade -y
 apt-get upgrade -y
-
-# update global npm and install typescript and tern
-npm install -g npm typescript tern prettier create-react-app
-cd $DIR
-
 apt-get autoclean
 apt-get autoremove -y
+
+# update global npm and install typescript and tern
+if [ -n "$NVM_DIR" ]; then
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  nvm use system
+fi
+
+npm install -g npm typescript tern prettier create-react-app
+cd $DIR
